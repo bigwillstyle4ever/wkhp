@@ -6,7 +6,6 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
 import webpackDevServer from '../webpack/dev-server';
-import routes from './routes';
 
 // use dotenv
 dotenv.config({
@@ -15,6 +14,7 @@ dotenv.config({
 
 // Express app setup
 const app = express();
+const router = express.Router();
 
 // views engine
 app.set('views', path.join(__dirname, './views'));
@@ -36,8 +36,13 @@ app.use(cookieParser());
 // serve static files from 'public'
 app.use(express.static(path.join(__dirname, './assets')));
 
-// default routes
-app.use('/', routes);
+// default route
+app.use(
+  '/',
+  router.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './index.html'))
+  })
+)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
