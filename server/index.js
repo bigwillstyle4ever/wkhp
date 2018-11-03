@@ -1,5 +1,5 @@
 import http from 'http'
-import app from '../src'
+import app from './module'
 
 /**
  * Simple logger function.

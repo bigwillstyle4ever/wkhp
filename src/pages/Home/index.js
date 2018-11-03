@@ -1,13 +1,12 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+// import { Switch, Route, BrowserRouter } from 'react-router-dom'
 // import PropTypes from 'prop-types'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { /* ThemeProvider */} from 'styled-components'
 
 import 'normalize.css'
-import theme from '../styles/theme'
+// import theme from '../../styles/theme'
 
-import Header from './components/header'
+import Header from '../../components/header'
 
 console.log(process.env.APP_NAME)
 console.log('WKHP Clientside Dashboard service')
@@ -41,20 +40,19 @@ const Home = () => (
   </div>
 )
 
-const Help = () => (
-  <div>Help</div>
-)
+// const Help = () => (
+//   <div>Help</div>
+// )
 
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <Switch>
-        <Route path='/help' component={Help} />
-        <Route path='/' component={Home} />
-      </Switch>
-    </BrowserRouter>
-  </ThemeProvider>
-)
+// const App = () => (
+//   <ThemeProvider theme={theme}>
+//     <BrowserRouter>
+//       <Switch>
+//         <Route path='/help' component={Help} />
+//         <Route path='/' component={Home} />
+//       </Switch>
+//     </BrowserRouter>
+//   </ThemeProvider>
+// )
 
-// render the app
-render(<App />, document.getElementById('app'))
+export default Home;

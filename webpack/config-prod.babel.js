@@ -1,13 +1,9 @@
 import path from 'path';
 import webpack from 'webpack';
 
-/**
- * Webpack configuration for production
- */
-
 export default {
   devtool: 'source-map',
-  entry: path.join(process.cwd(), 'src/app/index'),
+  entry: path.join(process.cwd(), 'src/index'),
   output: {
     filename: 'bundle.js',
     path: path.join(process.cwd(), 'public', 'js'),

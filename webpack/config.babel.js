@@ -1,16 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
 
-/**
- * Webpack configuration for development
- */
-
 export default {
   devtool: 'eval-source-map',
   mode: 'development',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'src/app/index'),
+    path.join(process.cwd(), 'src/index'),
   ],
   output: {
     filename: 'bundle.js',

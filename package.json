@@ -1,6 +1,6 @@
 {
   "name": "wkhp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "wk homepage",
   "main": "src/index.js",
   "author": "wk",
