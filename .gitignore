@@ -67,3 +67,6 @@ typings/
 dist/
 public/js
 
+# vs code
+*.code-workspace
+
