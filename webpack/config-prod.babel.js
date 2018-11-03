@@ -1,8 +1,9 @@
+import path from 'path';
+import webpack from 'webpack';
+
 /**
  * Webpack configuration for production
  */
-import path from 'path';
-import webpack from 'webpack';
 
 export default {
   devtool: 'source-map',
