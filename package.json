@@ -2,7 +2,7 @@
   "name": "wkhp",
   "version": "0.0.0",
   "description": "wk homepage",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "wk",
   "license": "ISC",
   "scripts": {
@@ -10,7 +10,6 @@
     "build": "NODE_ENV=production npx env-cmd .env webpack --config ./webpack/config-prod.babel.js",
     "postinstall": "npm run build",
     "dev": "NODE_ENV=development nodemon --exec babel-node ./server/index.js",
-    "development": "nodemon && APP_ENV=development --exec babel-node webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -62,6 +61,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "styled-components": "^4.0.3",
