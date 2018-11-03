@@ -14,6 +14,7 @@ console.log('WKHP Clientside Dashboard service')
 
 if (module.hot) {
   module.hot.accept()
+  console.log('hot module accepted hhm')
 }
 
 const AppBackground = styled.div`
@@ -40,13 +41,17 @@ const Home = () => (
   </div>
 )
 
+const Help = () => (
+  <div>Help</div>
+)
+
 const App = () => (
   <ThemeProvider theme={theme}>
     <BrowserRouter>
       <Switch>
+        <Route path='/help' component={Help} />
         <Route path='/' component={Home} />
       </Switch>
-
     </BrowserRouter>
   </ThemeProvider>
 )

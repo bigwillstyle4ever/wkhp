@@ -16,8 +16,8 @@ dotenv.config({
 const app = express();
 const router = express.Router();
 
-// views engine
-app.set('views', path.join(__dirname, './views'));
+// pug as views engine to display errors or other apps outside react
+app.set('views', path.join(__dirname, './pugTemplates'));
 app.set('view engine', 'pug');
 
 // include webpack-dev-server for development only
