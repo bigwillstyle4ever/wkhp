@@ -1,13 +1,9 @@
 import express from 'express';
 
 const router = express.Router();
-/* GET home page.
-router.get('*', (req, res) => {
-  res.render('index');
-}); */
 
+// default route to dashboard service => remove pug and change to html
 router.get('*', (req, res) => {
-  // throw new Error('Sorry an error occured');
   res.render('index');
 });
 

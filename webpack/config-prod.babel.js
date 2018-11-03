@@ -6,7 +6,7 @@ import webpack from 'webpack';
 
 export default {
   devtool: 'source-map',
-  entry: path.join(process.cwd(), 'src/client/dashboard/index'),
+  entry: path.join(process.cwd(), 'src/app/index'),
   output: {
     filename: 'bundle.js',
     path: path.join(process.cwd(), 'public', 'js'),

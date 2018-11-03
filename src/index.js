@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // serve static files from 'public'
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, './assets')));
 
 // default routes
 app.use('/', routes);

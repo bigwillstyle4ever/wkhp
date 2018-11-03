@@ -10,7 +10,7 @@ export default {
   mode: 'development',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'src/client/dashboard/index'),
+    path.join(process.cwd(), 'src/app/index'),
   ],
   output: {
     filename: 'bundle.js',

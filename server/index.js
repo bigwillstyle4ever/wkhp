@@ -1,7 +1,6 @@
-import http from 'http';
-// import dotenv from 'dotenv';
-import app from '..';
-
+import http from 'http'
+// import dotenv from 'dotenv'
+import app from '../src'
 
 /**
  * Simple logger function.

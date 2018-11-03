@@ -1,10 +1,8 @@
 {
-    "presets": [
-        "es2015",
-        "stage-0",
-        "react"
-    ],
-    "plugins": [
-        "transform-inline-environment-variables"
-    ]
+  "presets": ["env", "es2015", "stage-0", "react"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-inline-environment-variables",
+    "styled-components"
+  ]
 }
