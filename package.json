@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigwillstyle4ever/wkhp.git"
+    "url": "git+https://github.com/willkuerlich/wkhp.git"
   },
   "keywords": [
     "custom mern stack"
   ],
   "bugs": {
-    "url": "https://github.com/bigwillstyle4ever/wkhp/issues"
+    "url": "https://github.com/willkuerlich/wkhp/issues"
   },
-  "homepage": "https://github.com/bigwillstyle4ever/wkhp#readme",
+  "homepage": "https://github.com/willkuerlich/wkhp#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
