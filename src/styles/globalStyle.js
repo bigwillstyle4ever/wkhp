@@ -1,10 +1,10 @@
-/*
 import { injectGlobal } from 'styled-components'
 
+// eslint-disable-next-line
 injectGlobal`
-  body {
-    padding: 0;
+  * {
+    box-sizing: border-box;
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
   }
-` */
+`

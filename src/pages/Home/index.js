@@ -40,19 +40,4 @@ const Home = () => (
   </div>
 )
 
-// const Help = () => (
-//   <div>Help</div>
-// )
-
-// const App = () => (
-//   <ThemeProvider theme={theme}>
-//     <BrowserRouter>
-//       <Switch>
-//         <Route path='/help' component={Help} />
-//         <Route path='/' component={Home} />
-//       </Switch>
-//     </BrowserRouter>
-//   </ThemeProvider>
-// )
-
-export default Home;
+export default styled(Home)``

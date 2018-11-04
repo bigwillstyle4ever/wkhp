@@ -1,63 +1,43 @@
 import React from 'react'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
-// import PropTypes from 'prop-types'
-import styled, { ThemeProvider } from 'styled-components'
+import { BrowserRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import 'normalize.css'
-import theme from '../styles/theme'
+// import Header from '../components/header'
+import Logo from '../components/Logo'
+import NavBar from '../components/NavBar'
 
-import Header from '../components/header'
+import Routes from './Routes'
+import ServiceLinks from './ServiceLinks'
+import AccountLinks from './AccountLinks'
 
 console.log('WKHP Clientside Dashboard service')
 
 const AppBackground = styled.div`
-  background-color: ${p => p.theme.colors.appBackground};
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  background: ${props => props.theme.background};
+  width: 100vw;
+  height: 100vh;
 `
 
-const HeaderBackground = styled.div`
-  background-color: ${p => p.theme.colors.headerBackground};
-  padding-top: 56px;
-`
-
-const Home = () => (
-  <div>
-    <AppBackground>
-      <div>Navigation</div>
-      <HeaderBackground>
-        <Header title='Welcome' />
-      </HeaderBackground>
-      <div>content</div>
+const App = ({ className }) => (
+  <BrowserRouter>
+    <AppBackground className={className}>
+      <NavBar
+        logo={<Logo />}
+        title='Willkuerlich'
+        primaryNavLinks={<ServiceLinks />}
+        secondaryNavLinks={<AccountLinks />}
+      />
+      <Routes />
     </AppBackground>
-  </div>
+  </BrowserRouter>
 )
 
-const Account = () => (
-  <div>Account</div>
-)
+App.propTypes = {
+  className: PropTypes.string,
+}
+App.defaultProps = {
+  className: '',
+}
 
-const ForgotPassword = () => (
-  <div>ForgotPassword</div>
-)
-
-const SignUp = () => (
-  <div>SignUp</div>
-)
-
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <div>hallo</div>
-      <Switch>
-        <Route path='/account' component={Account} />
-        <Route path='/forgot-password' component={ForgotPassword} />
-        <Route path='/signup' component={SignUp} />
-        <Route path='/' component={Home} />
-      </Switch>
-    </BrowserRouter>
-  </ThemeProvider>
-)
-
-export default App;
+export default styled(App)``
