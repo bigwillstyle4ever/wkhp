@@ -2,13 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import BaseLink from '../Link'
+
+const StyledLink = styled(BaseLink)`
+  display: flex;
+`
+
 const NavContainer = styled.div`
-  background: ${p => p.theme.primary};
-  padding: ${p => p.theme.viewSidePadding};
+  margin: ${p => p.theme.viewportMargin};
   display: flex;
   align-content: flex-start;
+  align-self: center;
   flex-flow: row;
   height: 56px;
+  width: 100%;
 `
 const LogoContainer = styled.div`
   color: ${p => p.theme.brand};
@@ -43,7 +50,7 @@ const Title = styled.div`
   color: ${p => p.theme.brand};
   padding: 8px;
   display: flex;
-  h2 {
+  div {
     align-self: center;
   }
 `
@@ -56,12 +63,16 @@ const NavBar = ({
   secondaryNavLinks
 }) => (
   <NavContainer className={className}>
-    <LogoContainer>
-      {logo}
-    </LogoContainer>
-    <Title>
-      <h2>{title}</h2>
-    </Title>
+    <StyledLink to='/'>
+      <LogoContainer>
+        {logo}
+      </LogoContainer>
+      <Title>
+        <div>
+          {title}
+        </div>
+      </Title>
+    </StyledLink>
     <PriNavElements>
       {primaryNavLinks}
     </PriNavElements>
@@ -72,18 +83,11 @@ const NavBar = ({
 )
 
 NavBar.propTypes = {
-  className: PropTypes.string,
-  logo: PropTypes.object,
-  title: PropTypes.string,
-  primaryNavLinks: PropTypes.element,
-  secondaryNavLinks: PropTypes.element
-}
-NavBar.defaultProps = {
-  className: '',
-  logo: {},
-  title: '',
-  primaryNavLinks: {},
-  secondaryNavLinks: {}
+  className: PropTypes.string.isRequired,
+  logo: PropTypes.object.isRequired,
+  title: PropTypes.node.isRequired,
+  primaryNavLinks: PropTypes.node.isRequired,
+  secondaryNavLinks: PropTypes.node.isRequired
 }
 
 export default styled(NavBar)``

@@ -20,14 +20,20 @@ const theme = {
   border: '#000',
   borderVariant: '#111',
 
-  background: '#ddd',
-  surface: '#ccc',
+  shade: '#ccc',
+  shadeDark: '#888',
+
+  boxShadow: '0 0 4px 1px rgba(0, 0, 0, 0.2)',
+  boxShadowDark: '0 0 4px 1px rgba(0, 0, 0, 0.4)',
+
+  background: '#f7f7f7',
+  surface: '#fff',
 
   error: '#b71c1c',
   errorLight: '#7f0000',
   errorDark: '#7f0000',
 
-  viewSidePadding: '0px 10em 0px 10em',
+  viewportMargin: '0em 20em 0em 20em',
 
   transition: 'ease-in-out 200mx 50ms'
 }

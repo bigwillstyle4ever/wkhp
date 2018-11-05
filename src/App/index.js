@@ -1,35 +1,44 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { ThemeProvider /* , injectGlobal */ } from 'styled-components'
 
-// import Header from '../components/header'
-import Logo from '../components/Logo'
-import NavBar from '../components/NavBar'
+import AppLayout from '../components/layouts/AppLayout'
+import StyledAppLayout from './styled/layouts/Willkuerlich'
+
+import AppNavBar from './styled/AppNavBar'
+import AppFooter from './styled/AppFooter'
 
 import Routes from './Routes'
-import ServiceLinks from './ServiceLinks'
-import AccountLinks from './AccountLinks'
 
-console.log('WKHP Clientside Dashboard service')
+import 'normalize.css'
+// import './styled/styles/globalStyle' // can't get it to work
+import theme from './styled/styles/theme'
 
-const AppBackground = styled.div`
-  background: ${props => props.theme.background};
-  width: 100vw;
-  height: 100vh;
+/* alternative to using global style injection =>
+how to manipulate specific components from here? */
+const AppContainer = styled.div`
+  a {
+    text-decoration: none;
+  }
 `
+
+console.log('-- WKHP Clientside Dashboard service --')
+console.log(process.env.APP_NAME)
+console.log('-- Theme: ', theme, ' --');
 
 const App = ({ className }) => (
   <BrowserRouter>
-    <AppBackground className={className}>
-      <NavBar
-        logo={<Logo />}
-        title='Willkuerlich'
-        primaryNavLinks={<ServiceLinks />}
-        secondaryNavLinks={<AccountLinks />}
-      />
-      <Routes />
-    </AppBackground>
+    <ThemeProvider theme={theme}>
+      <AppContainer className={className}>
+        <AppLayout
+          layoutBlueprint={StyledAppLayout}
+          nav={AppNavBar}
+          routes={Routes}
+          footer={AppFooter}
+        />
+      </AppContainer>
+    </ThemeProvider>
   </BrowserRouter>
 )
 
